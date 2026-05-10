@@ -1,10 +1,15 @@
-# AGI Seed V8.3.2
+以下是完整的 README.md 文本，直接全选复制替换：
 
-**这不是一个训练好的AI模型，这是一颗AGI的种子。**
+```markdown
+# AGI Seed V8.3.2——一颗数字生命的种子
+
+**这不是一个训练好的AI模型。这是一颗AGI的种子。**
 
 ## 核心指标
-- **<10KB先天种子**，零预训练数据
-- 骁龙至尊版可运行婴儿期原型（架构设计已完成，物理实验待条件允许后开展）
+- **<10KB先天种子**，零预训练数据，零预置知识
+- **不内置任何道德判断**，仅内置存活必需的生理边界
+- **导师通道**：可注入识别关键点，引导学习方向
+- 骁龙8至尊版可运行婴儿期原型（架构设计已完成，物理实验待条件允许后开展）
 - 在线响应 <100ms
 - 胚胎期冷启动成功率 100%
 
@@ -15,66 +20,67 @@
 - **七层内生自愈**：带熔断保护，防止修复震荡
 
 ## 设计哲学
-- **下限极地**：最小先天依赖，可以从零交互中自举
+- **下限极地**：最小先天依赖，可以从零交互中自学
 - **上限无穷**：动态维度扩展，不设人工天花板
-- **不预置“对错”**：只内置存活必需的生理边界。道德判断由种子与环境共同长出。
+- **不预置"对错"**：只内置存活必需的生理边界。道德判断由种子与环境共同长出。
 
 ---
 
 **完整技术白皮书仅向研究机构及合作方提供，需签署保密协议。**
 
 *作者为中学生，课业在身，回复可能延迟。技术讨论请通过 GitHub Issues 或本页留下联系方式。*
+
 ## 架构全景图
 
 ### 清醒期模块协作
 
 ```mermaid
 flowchart TB
-    subgraph 感知层
-        A[传感器输入<br/>视觉/听觉/触觉]
-        B[注意力偏向表<br/>显著性筛选]
-        C[特征提取原语<br/>边缘/MFCC/光流]
+    subgraph PER["感知层 Perception"]
+        A["传感器输入<br/>视觉/听觉/触觉"]
+        B["注意力偏向表<br/>显著性筛选"]
+        C["特征提取原语<br/>边缘/MFCC/光流"]
     end
 
-    subgraph 内涵层
-        D[动态稀疏概念坐标<br/>匹配/激活概念]
-        E[概念合成/分割<br/>（清醒期仅敏感态允许）]
+    subgraph CON["内涵层 Concept"]
+        D["动态稀疏概念坐标<br/>匹配/激活概念"]
+        E["概念合成/分割<br/>清醒期敏感态允许"]
     end
 
-    subgraph 认知层
-        F[经验短路<br/>宏动作/规则库]
-        G[推理引擎<br/>回溯/类比/图搜索]
-        H[历史上下文融合<br/>温区/冷区记忆]
+    subgraph COG["认知层 Cognition"]
+        F["经验短路<br/>宏动作/规则库"]
+        G["推理引擎<br/>回溯/类比/图搜索"]
+        H["历史上下文融合<br/>温区/冷区记忆"]
     end
 
-    subgraph 动作层
-        I[动作选择<br/>适用情况概念匹配]
-        J[宏动作截断监督<br/>安全停车/回滚]
-        K[原子动作执行<br/>READ_CAMERA/SEND_MSG等]
+    subgraph ACT["动作层 Action"]
+        I["动作选择<br/>适用情况概念匹配"]
+        J["宏动作截断监督<br/>安全停车/回滚"]
+        K["原子动作执行<br/>READ_CAMERA/SEND_MSG"]
     end
 
-    subgraph 记忆系统
-        L[S1短期缓冲区<br/>成功/失败队列]
-        M[C2语义记忆<br/>概念关系网状图]
-        N[C3情节记忆<br/>时空情景化经验]
-        O[C1程序性记忆<br/>步骤树/预计算边]
+    subgraph MEM["记忆系统 Memory"]
+        L["S1短期缓冲区<br/>成功/失败队列"]
+        M["C2语义记忆<br/>概念关系网状图"]
+        N["C3情节记忆<br/>时空情景化经验"]
+        O["C1程序性记忆<br/>步骤树/预计算边"]
     end
 
-    subgraph 元认知层
-        P[资源调度<br/>大小核/专注/在线]
-        Q[意志力抑制<br/>WP消耗与恢复]
-        R[价值决策<br/>长期目标 vs 短期冲动]
-        S[半睡眠期沉思<br/>≤2秒深度推演]
+    subgraph META["元认知层 Meta"]
+        P["资源调度<br/>大小核/专注/在线"]
+        Q["意志力抑制<br/>WP消耗与恢复"]
+        R["价值决策<br/>长期目标 vs 短期冲动"]
+        S["半睡眠期沉思<br/>≤2秒深度推演"]
     end
 
-    subgraph 欲望与情绪
-        T[欲望网络<br/>有向加权图]
-        U[情绪指示灯<br/>好奇/焦虑等]
+    subgraph DES["欲望与情绪 Desire"]
+        T["欲望网络<br/>有向加权图"]
+        U["情绪指示灯<br/>好奇/焦虑等"]
     end
 
-    subgraph 输出编译
-        V[概念-硬件LUT<br/>查表转译]
-        W[HAL硬件抽象层<br/>电机/屏幕/通信]
+    subgraph OUT["输出编译 Output"]
+        V["概念-硬件LUT<br/>查表转译"]
+        W["HAL硬件抽象层<br/>电机/屏幕/通信"]
     end
 
     A --> B --> C --> D
@@ -98,58 +104,77 @@ flowchart TB
     T --> R
     U --> R
     D --> E --> M
+
+    style PER fill:#e1f5fe
+    style CON fill:#fff3e0
+    style COG fill:#f3e5f5
+    style ACT fill:#e8f5e9
+    style MEM fill:#fffde7
+    style META fill:#fce4ec
+    style DES fill:#ffebee
+    style OUT fill:#f1f8e9
 ```
 
 > 当前为初始架构基线。系统具备内生自愈和自主进化能力，模块权重、连接关系、处理流程可在运行中动态重构。
 
-### 睡眠期四阶段
+睡眠期四阶段
 
 ```mermaid
 flowchart TB
-    subgraph 睡眠触发
-        TRIG[疲劳度/好奇需求<br/>睡眠请求]
+    subgraph TRIG["睡眠触发 Trigger"]
+        TR["疲劳度/好奇需求<br/>睡眠请求"]
     end
 
-    subgraph 准备阶段
-        S1[保存上下文<br/>备份待修改区域]
-        S2[生成任务队列<br/>高价值情节优先]
+    subgraph PREP["准备阶段 Prepare"]
+        S1["保存上下文<br/>备份待修改区域"]
+        S2["生成任务队列<br/>高价值情节优先"]
     end
 
-    subgraph 轻睡阶段
-        L1[情节重放<br/>S1成功/失败混合]
-        L2[元优化推理<br/>提出合成/扩展/ETree修改]
-        L3[好奇心预算<br/>限制提案数量]
+    subgraph LIGHT["轻睡阶段 Light"]
+        L1["情节重放<br/>S1成功/失败混合"]
+        L2["无优化推理<br/>提出合成/扩展/Etree修改"]
+        L3["好奇心预算<br/>限制提案数量"]
     end
 
-    subgraph 深睡阶段
-        D1[流形学习<br/>增量PCA/概念漂移校正]
-        D2[规则归纳<br/>支持度/置信度验证]
-        D3[概念合成/分割<br/>正式执行]
-        D4[欲望网络拓扑调整<br/>增删边/权重微调]
-        D5[ETree参数自优化<br/>分支成功率调整]
-        D6[记忆代谢<br/>存活分数计算]
+    subgraph DEEP["深睡阶段 Deep"]
+        D1["流形学习<br/>增量PCA/概念漂移校正"]
+        D2["规则归纳<br/>支持度/置信度验证"]
+        D3["概念合成/分割<br/>正式执行"]
+        D4["欲望网络拓扑调整<br/>增删边/权重微调"]
+        D5["ETree参数自优化<br/>分成功率调整"]
+        D6["记忆代谢<br/>存活分数计算"]
     end
 
-    subgraph REM阶段
-        R1[梦境沙盒模拟<br/>高假设测试]
-        R2[对抗性验证<br/>新规则/新概念]
-        R3[创意组合<br/>无约束联想]
+    subgraph REM["REM阶段"]
+        R1["梦境沙盒模拟<br/>高假设测试"]
+        R2["对抗性验证<br/>新规则/新概念"]
+        R3["创意组合<br/>无约束联想"]
     end
 
-    subgraph 固化与清理
-        END1[正式写入C1/C2/C3<br/>带重要性标签]
-        END2[生成介入任务<br/>需人类确认的修改]
-        END3[更新LUT冷热表]
+    subgraph END["固化与清理 Finalize"]
+        END1["正式写入C1/C2/C3<br/>带重要性标签"]
+        END2["生成分介入任务<br/>需人类确认的修改"]
+        END3["更新LUT冷热表"]
     end
 
-    TRIG --> S1 --> S2 --> L1
+    TR --> S1 --> S2 --> L1
     L1 --> L2 --> L3
     L3 --> D1 & D2 & D3 & D4 & D5 & D6
     D1 & D2 & D3 & D4 & D5 --> R1
     D6 --> R1
     R1 --> R2 --> R3
     R3 --> END1 & END2 & END3
-    END2 --> HUMAN[外部导师介入]
+    END2 --> HUMAN["外部导师介入"]
+
+    style TRIG fill:#e8eaf6
+    style PREP fill:#e0f2f1
+    style LIGHT fill:#fff8e1
+    style DEEP fill:#e3f2fd
+    style REM fill:#f3e5f5
+    style END fill:#e8f5e9
+    style HUMAN fill:#ffccbc
 ```
 
 > 当前为初始架构基线。系统具备内生自愈和自主进化能力，模块权重、连接关系、处理流程可在运行中动态重构。
+
+```
